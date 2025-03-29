@@ -10,7 +10,7 @@ import {
 export default function TopNav() {
   return (
     <>
-      <section className="bg-[#474747]">
+      <section className="bg-[#474747] hidden md:block">
         <div className="container flex items-center justify-between flex-wrap px-[150px] py-[11px]">
           <div>
             <ul className="flex text-white gap-[25px]">
