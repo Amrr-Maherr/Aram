@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function HeroSection() {
   return (
-    <section className="h-screen relative">
+    <section className="h-dvh relative">
       <Image
         src="/Assets/HeroImage.png"
         alt="Hero Image"
