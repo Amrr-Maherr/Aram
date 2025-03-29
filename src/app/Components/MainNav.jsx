@@ -50,7 +50,7 @@ export default function MainNav() {
   };
 
   return (
-    <nav className="bg-white border-gray-200  h-[146px] flex items-center justify-center">
+    <nav className="bg-white border-gray-200   flex items-center justify-center">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 w-full">
         <button
           data-collapse-toggle="navbar-default"
