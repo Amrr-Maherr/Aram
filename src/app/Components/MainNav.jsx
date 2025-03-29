@@ -100,12 +100,14 @@ export default function MainNav() {
               </label>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  "
+              <select
+                name=""
+                id=""
+                className="p-1 focus:outline-none text-[16px] font-[400]"
               >
-                العربيه
-              </a>
+                <option value="">العربيه</option>
+                <option value="">English</option>
+              </select>
             </li>
             <li>
               <a
