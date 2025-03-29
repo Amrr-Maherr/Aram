@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function HeroSection() {
   return (
-    <section className="h-dvh relative">
+    <section className="h-dvh flex items-center justify-center relative">
       <Image
         src="/Assets/HeroImage.png"
         alt="Hero Image"
@@ -14,7 +14,7 @@ export default function HeroSection() {
           zIndex: -1,
         }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
+      <div className="text-white text-center">
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8 sm:mb-[59px] text-black">
           مرحبا بكم فى موقعنا
         </p>
