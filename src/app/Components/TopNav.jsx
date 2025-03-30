@@ -10,10 +10,10 @@ import {
 export default function TopNav() {
   return (
     <>
-      <section className="bg-[#474747] hidden md:block">
+      <section className=" hidden md:block">
         <div className="container flex items-center justify-between flex-wrap px-[150px] py-[11px]">
           <div>
-            <ul className="flex text-white gap-[25px]">
+            <ul className="flex  gap-[25px]">
               <li className="flex items-center text-[16px] font-[400]">
                 <FaPhone className="mr-2" size={15} /> (414) 857 - 0107
               </li>
@@ -30,7 +30,7 @@ export default function TopNav() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaFacebook size={15} className="text-white" />
+                  <FaFacebook size={15} />
                 </a>
               </li>
               <li className="w-[27px] h-[27px] bg-[#F9F9F71F] rounded-full flex items-center justify-center">
@@ -39,7 +39,7 @@ export default function TopNav() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaTwitter size={15} className="text-white" />
+                  <FaTwitter size={15}  />
                 </a>
               </li>
               <li className="w-[27px] h-[27px] bg-[#F9F9F71F] rounded-full flex items-center justify-center">
@@ -48,7 +48,7 @@ export default function TopNav() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram size={15} className="text-white" />
+                  <FaInstagram size={15} />
                 </a>
               </li>
               <li className="w-[27px] h-[27px] bg-[#F9F9F71F] rounded-full flex items-center justify-center">
@@ -57,7 +57,7 @@ export default function TopNav() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin size={15} className="text-white" />
+                  <FaLinkedin size={15}  />
                 </a>
               </li>
             </ul>

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainNav() {
   const [isChecked, setIsChecked] = useState(false);
@@ -29,28 +31,46 @@ export default function MainNav() {
     const body = document.body;
     const nav = document.querySelector("nav");
     const menuLinks = document.querySelectorAll("#navbar-default a");
+    const select = document.querySelector("select");
+    const homeButton = document.querySelector(".home-button");
 
     if (isDarkMode) {
-      body.style.backgroundColor = "#111827";
-      body.style.color = "#f9fafb";
-      nav.style.backgroundColor = "#374151";
-      nav.style.borderColor = "#4b5563";
+      body.style.backgroundColor = "#121212";
+      body.style.color = "#FAFAFA";
+      nav.style.backgroundColor = "#1E1E1E";
+      nav.style.borderColor = "#333333";
+      if (select) {
+        select.style.backgroundColor = "#2c2c2c";
+        select.style.color = "#FAFAFA";
+      }
       menuLinks.forEach((link) => {
-        link.style.color = "#f9fafb";
+        link.style.color = "#FAFAFA";
       });
+      if (homeButton) {
+        homeButton.style.backgroundColor = "#333333";
+        homeButton.style.color = "#FAFAFA";
+      }
     } else {
       body.style.backgroundColor = "#ffffff";
-      body.style.color = "#1f2937";
+      body.style.color = "#212121";
       nav.style.backgroundColor = "#ffffff";
-      nav.style.borderColor = "#d1d5db";
+      nav.style.borderColor = "#eeeeee";
+      if (select) {
+        select.style.backgroundColor = "#ffffff";
+        select.style.color = "#212121";
+      }
       menuLinks.forEach((link) => {
-        link.style.color = "#1f2937";
+        link.style.color = "#212121";
       });
+      if (homeButton) {
+        homeButton.style.backgroundColor = "#DBDFD0";
+        homeButton.style.color = "#212121";
+      }
     }
   };
 
   return (
-    <nav className="bg-white border-gray-200   flex items-center justify-center">
+    <nav className="bg-white border-gray-200 flex items-center justify-center shadow-md transition-all duration-300">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 w-full">
         <button
           data-collapse-toggle="navbar-default"
@@ -84,26 +104,23 @@ export default function MainNav() {
           } mx-auto`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 gap-[10px] mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 gap-[10px] mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700">
             <li>
-              <label className="inline-flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={darkMode}
-                  onChange={handleToggle}
-                  className="sr-only peer"
+              <button
+                onClick={handleToggle}
+                className="focus:outline-none transition-transform duration-300 hover:scale-110"
+              >
+                <FontAwesomeIcon
+                  icon={darkMode ? faSun : faMoon}
+                  className="text-gray-600 dark:text-gray-300 text-xl"
                 />
-                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-                <span className="ms-3 text-sm font-medium text-gray-900  ">
-                  {darkMode ? "الوضع الداكن" : "الوضع الفاتح"}
-                </span>
-              </label>
+              </button>
             </li>
             <li>
               <select
                 name=""
                 id=""
-                className="p-1 focus:outline-none text-[16px] font-[400]"
+                className="p-1 focus:outline-none text-[16px] font-[400] rounded transition-all duration-300 hover:scale-105"
               >
                 <option value="">العربيه</option>
                 <option value="">English</option>
@@ -112,7 +129,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-300 hover:text-blue-500"
               >
                 الاتصال بنا
               </a>
@@ -120,7 +137,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  transition-colors duration-300 hover:text-blue-500"
               >
                 الفيديوهات
               </a>
@@ -128,7 +145,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  transition-colors duration-300 hover:text-blue-500"
               >
                 معرض الصور
               </a>
@@ -136,7 +153,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-300 hover:text-blue-500"
               >
                 المقالات
               </a>
@@ -144,7 +161,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition-colors duration-300 hover:text-blue-500"
               >
                 العروض
               </a>
@@ -152,7 +169,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  "
+                className="block py-2 px-3 text-[16px] font-[400] text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  transition-colors duration-300 hover:text-blue-500"
               >
                 عنا
               </a>
@@ -160,7 +177,7 @@ export default function MainNav() {
             <li>
               <a
                 href="#"
-                className="block py-[4px] px-[16px] rounded-xl bg-[#DBDFD0] text-[16px] font-[400] text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700   "
+                className="block py-[4px] px-[16px] rounded-xl home-button text-[16px] font-[400] text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700   transition-colors duration-300 hover:scale-105"
               >
                 الصفحه الرئيسيه
               </a>
