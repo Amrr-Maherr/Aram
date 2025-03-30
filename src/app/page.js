@@ -3,6 +3,7 @@ import TopNav from "./Components/TopNav";
 import MainNav from "./Components/MainNav";
 import HeroSection from "./Components/HeroSection";
 import OurServicesSection from "./Components/Services/OurServicesSection";
+import AboutUsSection from "./Components/AboutUs/AboutUsSection";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
       <TopNav />
       <MainNav />
       <HeroSection />
-      <OurServicesSection/>
+      <OurServicesSection />
+      <AboutUsSection/>
     </>
   );
 }

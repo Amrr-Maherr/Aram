@@ -5,9 +5,9 @@ import ServicesTitle from "./ServicesTitle";
 export default function OurServicesSection() {
   return (
     <>
-      <section>
+      <div>
         <div className="container w-[95%] mx-auto">
-          <div className="flex items-center justify-end flex-col my-[70px]">
+          <div className="flex items-center justify-end flex-col my-[10px]">
             <ServicesTitle Title="خدماتنا" />
             <ServicesSubTitle
               SubTitle="تقدم شركتنا ارام خدماتنا فى مجال تنظيم الحفلات والمناسبات
@@ -16,7 +16,7 @@ export default function OurServicesSection() {
           </div>
           <ServicesList />
         </div>
-      </section>
+      </div>
     </>
   );
 }
